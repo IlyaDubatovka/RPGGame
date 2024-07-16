@@ -42,7 +42,11 @@ public class Bridge : MonoBehaviour
     {
         if (other.CompareTag(PLAYER_TAG))
         {
-            Break();
+            var outline = other.GetComponent<Outline>();
+            if (outline.OutlineWidth<2)
+            {
+                Break();
+            }
         }
     }
 }
