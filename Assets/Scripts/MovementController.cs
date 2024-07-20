@@ -25,7 +25,8 @@ public class MovementController : MonoBehaviour
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo);
-            var position = hitInfo.transform.position;
+            var position = hitInfo.point;
+            
             _goal.position = position;
             Debug.Log($"x={position.x}, y={position.y}, z={position.z}");
         }
